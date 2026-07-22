@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CyberShield | Password Security Tool</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <header class="nav">
+    <a class="brand" href="#home"><span class="logo">◈</span> Cyber<span>Shield</span></a>
+    <nav><a href="#analyzer">Analyzer</a><a href="#generator">Generator</a><a href="#learn">Learn</a><a href="#quiz">Quiz</a></nav>
+    <button class="icon-btn" id="themeBtn" aria-label="Toggle theme">☼</button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">◉ YOUR DIGITAL SAFETY STARTS HERE</p>
+        <h1>Build a safer <em>digital life.</em></h1>
+        <p class="lead">Check password strength, generate secure credentials, and develop cyber-smart habits—all in one place.</p>
+        <div class="hero-actions"><a class="btn primary" href="#analyzer">Analyze Password <b>→</b></a><a class="btn ghost" href="#generator">Generate Password</a></div>
+        <div class="quick-stats"><div><strong id="checkedCount">0</strong><small>passwords checked</small></div><div><strong>256-bit</strong><small>encryption mindset</small></div><div><strong>15</strong><small>safety principles</small></div></div>
+      </div>
+      <div class="shield-visual" aria-hidden="true"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="shield"><span>✓</span></div><i class="float-tag one">SECURE</i><i class="float-tag two">ENCRYPTED</i><i class="float-tag three">PROTECTED</i></div>
+    </section>
+
+    <section class="section" id="analyzer">
+      <div class="section-head"><div><p class="eyebrow">01 / PASSWORD CHECK</p><h2>Know your password strength.</h2></div><p>We analyze your password instantly in your browser. Your password is never stored.</p></div>
+      <div class="tool-grid">
+        <article class="panel analyzer-card">
+          <label for="passwordInput">Enter a password to analyze</label>
+          <div class="input-wrap"><input id="passwordInput" type="password" placeholder="Type your password here..." autocomplete="new-password" /><button id="showPassword" aria-label="Show password">◉</button></div>
+          <div class="meter-top"><span id="strengthLabel">Waiting for input</span><strong id="scoreText">0%</strong></div>
+          <div class="meter"><span id="strengthBar"></span></div>
+          <div class="criteria" id="criteria"></div>
+        </article>
+        <article class="panel suggestions-card"><div class="panel-title"><span class="title-icon">✦</span><div><h3>Security suggestions</h3><p>Personalized improvements for your password.</p></div></div><ul id="suggestionList" class="suggestions"><li>Enter a password to see tailored advice.</li></ul></article>
+      </div>
+      <div class="stat-grid" id="passwordStats"><article><span>▣</span><p>Password length</p><strong>—</strong></article><article><span>◌</span><p>Estimated entropy</p><strong>—</strong></article><article><span>◷</span><p>Crack time</p><strong>—</strong></article><article><span>◈</span><p>Character variety</p><strong>—</strong></article></div>
+    </section>
+
+    <section class="section generator-section" id="generator">
+      <div class="section-head"><div><p class="eyebrow">02 / PASSWORD MAKER</p><h2>Create a password that works hard.</h2></div><p>Customize a strong password in seconds. Use a password manager to remember it safely.</p></div>
+      <div class="generator-layout">
+        <article class="panel gen-controls"><div class="range-row"><label for="lengthRange">Password length</label><output id="lengthOutput">16</output></div><input type="range" id="lengthRange" min="8" max="32" value="16" />
+          <div class="checks"><label><input type="checkbox" id="upper" checked /><span>Uppercase <b>ABC</b></span></label><label><input type="checkbox" id="lower" checked /><span>Lowercase <b>abc</b></span></label><label><input type="checkbox" id="numbers" checked /><span>Numbers <b>123</b></span></label><label><input type="checkbox" id="symbols" checked /><span>Symbols <b>#$&</b></span></label><label><input type="checkbox" id="similar" /><span>Avoid similar characters <b>iIlL1oO0</b></span></label></div>
+        </article>
+        <article class="panel generated-card"><p class="mini-label">YOUR GENERATED PASSWORD</p><div class="generated-value" id="generatedPassword">Click generate to begin</div><div class="generate-actions"><button class="btn primary" id="generateBtn">↻ Generate password</button><button class="btn ghost copy-btn" id="copyBtn">▣ Copy</button></div><p class="generator-note">✓ Generated locally. Nothing is sent to a server.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="learn">
+      <div class="section-head"><div><p class="eyebrow">03 / CYBER AWARENESS</p><h2>Stay alert. Stay informed.</h2></div><p>Understanding common threats is the first step toward preventing them.</p></div>
+      <div class="awareness-grid"><article class="awareness-card blue"><span>✉</span><h3>Phishing</h3><p>Fake messages designed to steal your data. Check senders, avoid urgent links, and verify requests independently.</p><button class="learn-btn" data-topic="phishing">Learn more →</button></article><article class="awareness-card purple"><span>◉</span><h3>Malware</h3><p>Harmful software such as viruses, worms, spyware, and trojans. Download only from trusted sources.</p><button class="learn-btn" data-topic="malware">Learn more →</button></article><article class="awareness-card red"><span>⚠</span><h3>Ransomware</h3><p>Malware that locks files until a payment is demanded. Keep backups and update software regularly.</p><button class="learn-btn" data-topic="ransomware">Learn more →</button></article><article class="awareness-card green"><span>◎</span><h3>Identity theft</h3><p>Someone misuses your personal data. Protect OTPs, privacy settings, and sensitive documents.</p><button class="learn-btn" data-topic="identity">Learn more →</button></article></div>
+      <div class="tip-banner"><div><p class="eyebrow">CYBER SAFETY CHECKLIST</p><h3>Small habits, big protection.</h3></div><button id="tipsBtn" class="btn ghost">Explore 15 tips <b>→</b></button></div>
+      <div class="tips-grid" id="tipsGrid"></div>
+    </section>
+
+    <section class="section" id="quiz">
+      <div class="section-head"><div><p class="eyebrow">04 / SECURITY QUIZ</p><h2>Test your cyber instincts.</h2></div><p>Five quick questions to help turn knowledge into safer choices.</p></div>
+      <article class="panel quiz-card" id="quizCard"><div class="quiz-progress"><span id="quizProgress">Question 1 of 5</span><div><i id="quizStep1"></i><i id="quizStep2"></i><i id="quizStep3"></i><i id="quizStep4"></i><i id="quizStep5"></i></div></div><h3 id="questionText"></h3><div id="answers" class="answers"></div><button id="nextBtn" class="btn primary" disabled>Next question →</button></article>
+    </section>
+  </main>
+  <footer><span class="logo">◈</span> CyberShield <small>Built for cyber awareness · First Year BTech Project</small></footer>
+  <div id="toast" role="status"></div><div id="modal" class="modal hidden"><div class="modal-box"><button id="modalClose">×</button><div id="modalContent"></div></div></div>
+  <script src="script.js"></script>
+</body>
+</html>
